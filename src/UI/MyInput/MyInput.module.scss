@@ -1,0 +1,10 @@
+.my_input {
+  width: 100%;
+  padding: 7px 10px;
+  border-radius: 5px;
+  border: none;
+  font: normal 21px/23px Poppins, sans-serif;
+}
+.my_input:focus {
+  outline: 1.5px solid #4448DA;
+}
