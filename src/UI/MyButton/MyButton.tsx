@@ -1,15 +1,13 @@
 import React from 'react';
 
+import {buttonType} from "../../types/buttonType";
+
 import classes from "./MyButton.module.scss"
 
-type ButtonType = {
-  children: React.ReactNode
-}
-
-const MyButton = ({children, ...props}: ButtonType) => {
+const MyButton = ({children, ...props}: buttonType) => {
   return (
     <>
-      <button {...props} className={classes.my_button}>
+      <button {...props} className={classes.myButton}>
         {children}
       </button>
     </>

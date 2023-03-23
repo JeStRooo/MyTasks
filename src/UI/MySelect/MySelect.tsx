@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 
+import {options} from "../../mockData/optionData";
+
 import classes from "./MySelect.module.scss";
+
 import drop_down_arrow from "../../assets/drop-down-arrow.svg";
 
 const MySelect = () => {
@@ -16,27 +19,25 @@ const MySelect = () => {
     setIsOpen(false)
   }
 
-  const options = ['Apple', 'Banana', 'Orange']
-
   return (
     <>
-      <div className={classes.my_select}>
-        <div className={classes.my_select__header} onClick={toggling}>
-          <span className={classes.my_select__header__title}>
+      <div className={classes.mySelect}>
+        <div className={classes.mySelect__header} onClick={toggling}>
+          <span className={classes.mySelect__header__title}>
             {selectedOption || 'Выберите категорию'}
           </span>
           <img src={drop_down_arrow}
                className=
-                 {isOpen ? classes.my_select__header__reverse_img : classes.my_select__header__img}
+                 {isOpen ? classes.mySelect__header__reverseImg : classes.mySelect__header__img}
                alt="Выберите категорию"
           />
         </div>
         {isOpen && (
-          <ul className={classes.my_select__list}>
+          <ul className={classes.mySelect__list}>
             {options.map((option: any) =>
-              <li className={classes.my_select__list__item}
+              <li className={classes.mySelect__list__item}
                   onClick={() => selectOptionClicked(option)}
-                  key={Math.random()}
+                  key={Date.now()}
               >
                 {option}
               </li>
