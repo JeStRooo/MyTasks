@@ -1,3 +1,5 @@
+@import "./src/assets/colors/colors";
+
 .mySelect {
   display: flex;
   flex-direction: column;
@@ -68,7 +70,7 @@
     }
 
     &__item:hover {
-      background-color: #dfe0fa;
+      background-color: var(--lightBlue);
     }
   }
 }

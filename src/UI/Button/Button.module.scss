@@ -1,5 +1,7 @@
+@import "./src/assets/colors/colors";
+
 .myButton {
-  background-color: #4448DA;
+  background-color: var(--darkBlue);
   color: #fff;
   font: normal 15px/17px Poppins, sans-serif;
   padding: 8px 8px;

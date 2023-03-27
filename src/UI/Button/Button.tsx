@@ -2,9 +2,9 @@ import React from 'react';
 
 import {buttonType} from "../../types/buttonType";
 
-import classes from "./MyButton.module.scss"
+import classes from "./Button.module.scss"
 
-const MyButton = ({children, ...props}: buttonType) => {
+const Button = ({children, ...props}: buttonType) => {
   return (
     <>
       <button {...props} className={classes.myButton}>
@@ -14,4 +14,4 @@ const MyButton = ({children, ...props}: buttonType) => {
   );
 };
 
-export default MyButton;
+export default Button;

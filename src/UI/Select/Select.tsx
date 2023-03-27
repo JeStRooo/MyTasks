@@ -2,11 +2,11 @@ import React, {useState} from 'react';
 
 import {options} from "../../mockData/optionData";
 
-import classes from "./MySelect.module.scss";
+import classes from "./Select.module.scss";
 
-import drop_down_arrow from "../../assets/drop-down-arrow.svg";
+import drop_down_arrow from "../../assets/images/drop-down-arrow.svg";
 
-const MySelect = () => {
+const Select = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedOption, setSelectedOption] = useState('')
 
@@ -49,4 +49,4 @@ const MySelect = () => {
   );
 };
 
-export default MySelect;
+export default Select;

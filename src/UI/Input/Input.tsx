@@ -1,8 +1,8 @@
 import React from 'react';
 
-import classes from "./MyInput.module.scss";
+import classes from "./Input.module.scss";
 
-const MyInput = (props: any) => {
+const Input = (props: any) => {
   return (
     <>
       <input className={classes.myInput} {...props} />
@@ -10,4 +10,4 @@ const MyInput = (props: any) => {
   );
 };
 
-export default MyInput;
+export default Input;
