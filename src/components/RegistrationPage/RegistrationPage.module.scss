@@ -1,0 +1,64 @@
+@import "./src/assets/colors/colors";
+
+body {
+  background: #edf0fc;
+}
+.main {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -5%);
+  background: #fff;
+  border-radius: 5px;
+  width: 550px;
+  height: 550px;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  padding: 1.3rem 1rem .6rem 1rem;
+
+  &__title {
+    margin: 0;
+    font-size: 1.9rem;
+  }
+
+  &__registration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    &__inputs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    &__checkbox {
+      display: flex;
+      justify-content: flex-start;
+      max-width: 500px;
+
+      p {
+        font: 15px/17px Poppins, sans-serif;
+      }
+    }
+  }
+}
+.error {
+  color: red;
+  position: absolute;
+  font: normal 14px/16px Poppins, sans-serif;
+  margin: 5px 0 0 0;
+}
+.auth {
+
+  &__signup {
+    text-decoration: none;
+    margin-left: 5px;
+    color: #3f43c5;
+    font: normal 17px/19px Poppins, sans-serif;
+  }
+}

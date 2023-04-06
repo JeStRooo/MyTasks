@@ -1,12 +1,19 @@
 import React from 'react';
-
 import './App.css';
-import Input from "./UI/Input/Input";
+
+import RegistrationPage from "./components/RegistrationPage/RegistrationPage";
+import {Provider} from "react-redux";
+import {store} from "./store";
+import {BrowserRouter} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Input type="text" />
+      <Provider store={store}>
+        <BrowserRouter>
+          <RegistrationPage/>
+        </BrowserRouter>
+      </Provider>
     </div>
   );
 }

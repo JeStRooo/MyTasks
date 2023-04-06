@@ -4,9 +4,21 @@
   width: 450px;
   padding: 7px 10px;
   border-radius: 5px;
+  outline: 1.5px solid #8d8a8a;
   border: none;
-  font: normal 21px/23px Poppins, sans-serif;
+  font: normal 17px/19px Poppins, sans-serif;
+
+  &:focus {
+    outline: 1.5px solid var(--darkBlue);
+  }
 }
-.myInput:focus {
-  outline: 1.5px solid var(--darkBlue);
+
+.myInputError {
+  @extend .myInput;
+  outline: 1.5px solid red;
+
+  &:focus {
+    outline: 1.5px solid red;
+  }
 }
+
