@@ -11,6 +11,12 @@ export interface RegistrationType {
   confirmPassword?: string
 }
 
+export type CheckedInput = {
+  errors: FormikErrors<RegistrationType>;
+  touched: FormikTouched<RegistrationType>;
+  inputName: keyof RegistrationType;
+}
+
 export interface FormikPropsType {
   values: RegistrationType;
   touched: FormikTouched<RegistrationType>;

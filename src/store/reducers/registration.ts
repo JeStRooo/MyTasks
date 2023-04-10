@@ -1,6 +1,5 @@
 import {RegistrationAction, RegistrationActionType} from "../../types/registrationType";
 
-
 const initialState = {
   name: null,
   email: null,

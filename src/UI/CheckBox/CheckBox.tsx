@@ -1,15 +1,11 @@
 import * as React from 'react';
+
 import Checkbox, {CheckboxProps} from '@mui/material/Checkbox';
 
-const CheckBox: React.FC<CheckboxProps> = (props) => {
-  return (
+const CheckBox: React.FC<CheckboxProps> = (checkboxProps) =>
     <Checkbox
       inputProps={{'aria-label': 'controlled'}}
-      {...props}
+      {...checkboxProps}
     />
-  );
-}
-
 
 export default CheckBox;
-

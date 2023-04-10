@@ -1,45 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import {NavLink, useNavigate} from "react-router-dom";
+import React, { useState } from 'react';
 
-import RegistrationInputs from "./RegistrationInputs/RegistrationInputs";
-
-import {useDispatch, useSelector} from "react-redux";
-import {registrationAction} from "../../store/actions/registrationAction";
-import {validationSchemaRegistration} from "../../mockData/patterns";
-
+import {NavLink} from "react-router-dom";
 import {Formik} from "formik";
 
-import * as yup from "yup";
-
-import {RegistrationType} from "../../types/registrationType";
-import {RootType} from "../../store/reducers/reducers";
-
-import classes from "./RegistrationPage.module.scss";
+import RegistrationInputs from "./RegistrationInputs/RegistrationInputs";
 import Button from "../../UI/Button/Button";
 import CheckBox from "../../UI/CheckBox/CheckBox";
 
-interface InitialValues {
-  name: string,
-  email: string,
-  password: string,
-  confirmPassword?: string
-}
+import {useDispatch} from "react-redux";
+import {registrationAction} from "../../store/actions/registrationAction";
 
-const RegistrationPage = () => {
-  const registration = useSelector((state: RootType) => state.registration);
+import {initialValues, validationSchema} from "../../mockData/patterns";
+
+import {RegistrationType} from "../../types/registrationType";
+
+import classes from "./RegistrationPage.module.scss";
+
+const RegistrationPage: React.FC = () => {
   const dispatch = useDispatch();
 
-  const [isChecked, setIsChecked] = useState<boolean>(false);
-  const [isNavigate, setIsNavigate] = useState<boolean>(false)
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (isNavigate) {
-      navigate('auth', {replace: true})
-    }
-  }, [isNavigate])
-
-  const validationSchema = yup.object().shape({...validationSchemaRegistration});
+  const [isChecked, setIsChecked] = useState(false);
 
   const registrationUser = (name: string, email: string, password: string) => {
     const userData: RegistrationType = {
@@ -48,21 +28,15 @@ const RegistrationPage = () => {
       password: password,
     }
     dispatch(registrationAction(userData))
-    console.log(registration)
   }
 
   return (
     <main className={classes.main}>
       <h1 className={classes.main__title}>Регистрация</h1>
-        <Formik<InitialValues>
-          initialValues={{
-            name: "",
-            email: "",
-            password: "",
-            confirmPassword: ""
-          }}
+        <Formik<RegistrationType>
+          initialValues={initialValues}
           onSubmit={values => {
-            values.confirmPassword = ''
+            delete values.confirmPassword
           }}
           validationSchema={validationSchema}
         >
@@ -83,7 +57,7 @@ const RegistrationPage = () => {
               />
               <div className={classes.main__registration__checkbox}>
                 <CheckBox
-                  onChange={(e: any) => setIsChecked(e.target.checked)}
+                  onChange={() => setIsChecked(!isChecked)}
                   checked={isChecked}
                 />
                 <p>Я принимаю Условия обслуживания и прочитал Политику конфиденциальности</p>

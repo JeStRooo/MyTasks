@@ -22,3 +22,12 @@ export const validationSchemaRegistration = {
     .required("Поле обязательно для заполнения")
     .oneOf([yup.ref(`password`)], "Пароли не совпадают")
 }
+
+export const initialValues = {
+  name: "",
+  email: "",
+  password: "",
+  confirmPassword: ""
+}
+
+export const validationSchema = yup.object().shape({...validationSchemaRegistration});
