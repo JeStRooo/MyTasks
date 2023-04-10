@@ -1,10 +1,12 @@
+import React from 'react';
+
 import './App.css';
-import Animation from "./components/Animation/Animation";
+import Input from "./UI/Input/Input";
 
 function App() {
   return (
     <div className="App">
-      <Animation />
+      <Input type="text" />
     </div>
   );
 }

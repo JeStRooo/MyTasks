@@ -1,0 +1,12 @@
+@import "./src/assets/colors/colors";
+
+.myInput {
+  width: 450px;
+  padding: 7px 10px;
+  border-radius: 5px;
+  border: none;
+  font: normal 21px/23px Poppins, sans-serif;
+}
+.myInput:focus {
+  outline: 1.5px solid var(--darkBlue);
+}

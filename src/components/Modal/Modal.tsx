@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 
-import classes from "./Animation.module.scss";
-import page from "../../assets/page.gif";
+import classes from "./Modal.module.scss";
 
-const Animation = () => {
+import error from "../../assets/error.gif";
+
+const Modal = () => {
   const [isModal, setIsModal] = useState(true)
 
   const showModal = () => {
@@ -17,11 +18,11 @@ const Animation = () => {
       </button>
       <div className={isModal ? classes.modal : classes.not_modal}>
         <h1 className={classes.modal__title}>Это что, модальное окно?</h1>
-        <img src={page} alt="Ой!" className={classes.modal__img}/>
+        <img src={error} alt="Ой!" className={classes.modal__img}/>
       </div>
     </>
   )
     ;
 };
 
-export default Animation;
+export default Modal;
