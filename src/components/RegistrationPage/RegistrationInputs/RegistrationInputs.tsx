@@ -15,7 +15,7 @@ const RegistrationInputs = ({touched, errors, values, handleChange, handleBlur}:
 
   const isErrorMessage = ({errors, touched, inputName}: CheckedInput) => {
     return touched[inputName] && errors[inputName] &&
-      <p className={classes.error}>{errors.name}</p>
+      <p className={classes.error}>{errors[inputName]}</p>
   }
 
   return (

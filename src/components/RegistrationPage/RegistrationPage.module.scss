@@ -1,33 +1,36 @@
 @import "./src/assets/colors/colors";
 
-body {
-  background: #edf0fc;
-}
 .main {
-  position: fixed;
-  left: 50%;
-  transform: translate(-50%, -5%);
-  background: #fff;
-  border-radius: 5px;
-  width: 550px;
-  height: 550px;
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  align-items: center;
-  padding: 1.3rem 1rem .6rem 1rem;
+  padding: 1rem;
 
-  &__title {
-    margin: 0;
-    font-size: 1.9rem;
+  &__logo {
+    display: flex;
+    max-width: 15%;
+    justify-content: flex-start;
   }
 
   &__registration {
     display: flex;
     flex-direction: column;
+    gap: 2.5rem;
     align-items: center;
-    gap: 1.5rem;
+    justify-content: center;
+    margin: 0 auto;
+    width: 550px;
+    height: 550px;
+    padding: 1.3rem 1rem .6rem 1rem;
+
+    &__title {
+      margin: 0;
+      font-size: 1.9rem;
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
 
     &__checkbox {
       display: flex;
@@ -45,7 +48,7 @@ body {
   &__signup {
     text-decoration: none;
     margin-left: 5px;
-    color: #3f43c5;
+    color: var(--lightBlue);
     font: normal 17px/19px Poppins, sans-serif;
   }
 }

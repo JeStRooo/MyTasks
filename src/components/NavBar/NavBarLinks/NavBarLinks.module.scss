@@ -1,0 +1,34 @@
+@import "./src/assets/colors/colors";
+
+.navBarLinks {
+  display: flex;
+  flex-direction: column;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    margin-left: 1rem;
+    text-decoration: none;
+
+    &__img {
+      max-width: 10%;
+      filter: grayscale(1);
+      transition: .3s all;
+    }
+
+    &__title {
+      font: 500 17px/19px Poppins, sans-serif;
+      text-decoration: none;
+      transition: .3s all;
+    }
+
+    &:hover &__img {
+      filter: grayscale(0);
+    }
+
+    &:hover &__title {
+      color: var(--primaryBlue) !important;
+    }
+  }
+}

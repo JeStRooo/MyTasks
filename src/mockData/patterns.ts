@@ -1,5 +1,7 @@
 import * as yup from "yup";
 
+import Home from "../assets/images/main-page.svg";
+
 export const validationSchemaRegistration = {
   name: yup
     .string()
@@ -31,3 +33,11 @@ export const initialValues = {
 }
 
 export const validationSchema = yup.object().shape({...validationSchemaRegistration});
+
+export const links = [
+  {
+    img: Home,
+    title: 'Главная',
+    path: '/main-page'
+  }
+]

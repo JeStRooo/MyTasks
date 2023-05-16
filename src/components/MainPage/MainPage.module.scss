@@ -1,0 +1,48 @@
+@import "./src/assets/colors/colors";
+
+.wrapper {
+  margin: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.header {
+  min-width: 220px;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid var(--darkWhite);
+  border-top: none;
+  max-width: 550px;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1.5px solid var(--darkWhite);
+
+    &__page {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .7rem;
+      border-bottom: 1.5px solid var(--darkWhite);
+
+      &__title {
+        font: bold 17px/19px Poppins, sans-serif;
+        margin: 0;
+      }
+    }
+
+    &__whatsHappening {
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+}
+.avatar {
+  max-width: 45px;
+  max-height: 45px;
+  border-radius: 360px;
+}

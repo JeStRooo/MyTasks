@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 import {NavLink} from "react-router-dom";
+import {useNavigate} from 'react-router-dom';
 import {Formik} from "formik";
+import {useDispatch} from "react-redux";
 
 import RegistrationInputs from "./RegistrationInputs/RegistrationInputs";
 import Button from "../../UI/Button/Button";
-import CheckBox from "../../UI/CheckBox/CheckBox";
+import CheckBox from "../../MUI/CheckBox/CheckBox";
 
-import {useDispatch} from "react-redux";
 import {registrationAction} from "../../store/actions/registrationAction";
 
 import {initialValues, validationSchema} from "../../mockData/patterns";
@@ -16,10 +17,14 @@ import {RegistrationType} from "../../types/registrationType";
 
 import classes from "./RegistrationPage.module.scss";
 
+import logoDark from "../../assets/images/logo_dark.svg";
+
 const RegistrationPage: React.FC = () => {
   const dispatch = useDispatch();
 
   const [isChecked, setIsChecked] = useState(false);
+
+  const navigate = useNavigate();
 
   const registrationUser = (name: string, email: string, password: string) => {
     const userData: RegistrationType = {
@@ -28,26 +33,29 @@ const RegistrationPage: React.FC = () => {
       password: password,
     }
     dispatch(registrationAction(userData))
+    navigate('/main-page')
+    console.log(userData)
   }
 
   return (
     <main className={classes.main}>
-      <h1 className={classes.main__title}>Регистрация</h1>
+      <img src={logoDark} alt="Tetrotom" className={classes.main__logo}/>
+      <div className={classes.main__registration}>
+        <h1 className={classes.main__registration__title}>Регистрация</h1>
         <Formik<RegistrationType>
           initialValues={initialValues}
-          onSubmit={values => {
-            delete values.confirmPassword
-          }}
+          onSubmit={values => console.log(values)}
           validationSchema={validationSchema}
         >
-          {({values,
+          {({
+              values,
               touched,
               errors,
               isValid,
               handleChange,
               handleBlur,
-          }) => (
-            <div className={classes.main__registration}>
+            }) => (
+            <div className={classes.main__registration__form}>
               <RegistrationInputs
                 touched={touched}
                 errors={errors}
@@ -78,6 +86,7 @@ const RegistrationPage: React.FC = () => {
             </div>
           )}
         </Formik>
+      </div>
     </main>
   );
 };
