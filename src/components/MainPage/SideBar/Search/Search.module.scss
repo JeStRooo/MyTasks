@@ -1,0 +1,22 @@
+@import "./src/assets/colors/colors";
+
+.search {
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  cursor: pointer;
+
+  &:focus-within {
+    outline: 1.5px solid var(--primaryBlue);
+  }
+
+  &__input {
+    background-color: transparent;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

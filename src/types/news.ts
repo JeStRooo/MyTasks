@@ -18,7 +18,7 @@ export type News = {
 }
 
 export type SideBarType = {
-  news: News[]
+  news: News[],
 }
 
 interface getNewsRequest {

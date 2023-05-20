@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import ThemeContext from "./ThemeContext";
 
@@ -9,12 +9,21 @@ type ThemeProviderProps = {
 }
 
 const ThemeProvider: React.FC<ThemeProviderProps> = ({children}) => {
-  const [theme, setTheme] = useState(themes.lightMode);
+  const storedTheme = localStorage.getItem('theme');
+  const initialState = storedTheme ? JSON.parse(storedTheme) : themes.lightMode;
+
+  const [theme, setTheme] = useState(initialState);
 
   const themeHandler = () => {
-    theme === themes.lightMode ? setTheme(themes.darkMode) : setTheme(themes.lightMode)
-    console.log(theme)
+    const newThemeState = theme === themes.lightMode ? themes.darkMode : themes.lightMode;
+    setTheme(newThemeState);
+    localStorage.setItem('theme', JSON.stringify(newThemeState));
   }
+
+  useEffect(() => {
+    localStorage.setItem('theme', JSON.stringify(theme));
+  }, []);
+  
 
   const themeStyle = {backgroundColor: theme.background, color: theme.color, borderColor: theme.borderColor}
 

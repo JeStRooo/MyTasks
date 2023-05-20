@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useState, useCallback} from 'react';
 
 import {useDispatch, useSelector} from "react-redux";
 
@@ -12,6 +12,9 @@ import {getPostsRequest} from "../../store/actions/getPosts";
 import {getNewsRequest} from "../../store/actions/getNews";
 
 import ThemeContext from "../ThemeProvider/ThemeContext";
+import {useSearchContext} from "../SearchProvider/SearchProvider";
+
+import {themes} from "../../mockData/themes";
 
 import {PostsStateType} from "../../types/posts";
 import {News} from "../../types/news";
@@ -24,14 +27,32 @@ const MainPage: React.FC = () => {
   const dispatch = useDispatch();
 
   const {theme, themeHandler, themeStyle} = useContext(ThemeContext);
+  const {searchQuery} = useSearchContext()
+
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    dispatch(getPostsRequest())
-    dispatch(getNewsRequest())
+    const fetchData = async() => {
+      await dispatch(getPostsRequest())
+      await dispatch(getNewsRequest())
+      setIsLoading(false)
+    }
+    fetchData()
   }, [])
 
+  const searchPosts = useCallback(() => {
+    return [...posts].filter(post => post.title.toLowerCase().includes(searchQuery.toLowerCase()))
+  }, [posts, searchQuery])
+
+
+  if (isLoading) {
+    return <h1>Загрузка</h1>
+  }
+
+  console.log(theme)
+
   return (
-    <div style={themeStyle}>
+    <div className={classes.background} style={themeStyle}>
       <section className={classes.wrapper}>
         <header className={classes.header}>
           <NavBar theme={theme}/>
@@ -42,7 +63,9 @@ const MainPage: React.FC = () => {
               <h2 className={classes.main__header__page__title}>
                 Главная
               </h2>
-              <MUISwitch onChange={() => themeHandler()}/>
+              <MUISwitch onChange={() => themeHandler()}
+                         checked={theme === themes.darkMode}
+              />
             </div>
             <div className={classes.main__header__whatsHappening}>
               <img src="https://i.pravatar.cc"
@@ -53,7 +76,7 @@ const MainPage: React.FC = () => {
             </div>
           </div>
           <PostsList
-            posts={posts}
+            posts={searchPosts()}
           />
         </main>
         <SideBar

@@ -1,6 +1,7 @@
 import * as yup from "yup";
 
 import Home from "../assets/images/main-page.svg";
+import Avatar from "../assets/images/avatar.svg";
 
 export const validationSchemaRegistration = {
   name: yup
@@ -39,5 +40,10 @@ export const links = [
     img: Home,
     title: 'Главная',
     path: '/main-page'
+  },
+  {
+    img: Avatar,
+    title: 'Профиль',
+    path: '/home-page'
   }
 ]
