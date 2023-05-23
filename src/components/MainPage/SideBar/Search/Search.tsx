@@ -1,11 +1,12 @@
 import React, {useContext} from 'react';
 
+import {useSearchContext} from "../../../SearchProvider/SearchProvider";
+
 import ThemeContext from "../../../ThemeProvider/ThemeContext";
 
 import search from "../../../../assets/images/search.svg"
 
 import classes from "./Search.module.scss";
-import {useSearchContext} from "../../../SearchProvider/SearchProvider";
 
 const Search = () => {
   const {theme} = useContext(ThemeContext)

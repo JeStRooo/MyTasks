@@ -44,6 +44,6 @@ export const links = [
   {
     img: Avatar,
     title: 'Профиль',
-    path: '/home-page'
+    path: '/home-page/myProfile'
   }
 ]

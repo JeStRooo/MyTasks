@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import Switch from '@mui/material/Switch';
 
@@ -51,4 +51,4 @@ const MUISwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-export default MUISwitch;
+export default React.memo(MUISwitch);

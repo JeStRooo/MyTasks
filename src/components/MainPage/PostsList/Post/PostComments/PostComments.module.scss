@@ -1,0 +1,45 @@
+@import "src/components/MainPage/PostsList/Post/Post.module";
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  transition: .3s all;
+
+  &__comment {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: 10px 10px;
+    border-top: 1.5px solid var(--darkWhite);
+
+    &__user {
+      @extend .post__user;
+
+      &__info {
+        @extend .post__user__info;
+
+        &__main {
+          @extend .post__user__info__main__userInfo;
+
+          &__userName {
+            @extend .post__user__info__main__userInfo__userName;
+          }
+
+          &__nickName {
+            @extend .post__user__info__main__userInfo__nickName;
+          }
+        }
+
+        &__title {
+          font: normal 13px/15px Poppins, sans-serif;
+          margin: 0;
+        }
+      }
+
+      &__avatar {
+        max-width: 35px;
+        border-radius: 360px;
+      }
+    }
+  }
+}

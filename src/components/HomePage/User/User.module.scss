@@ -1,0 +1,54 @@
+.user {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 15px;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+
+    &__avatar {
+      border-radius: 50%;
+      max-width: 120px;
+    }
+
+    &__name {
+
+      &__title {
+        font: bold 20px/22px Poppins, sans-serif;
+        margin: 0;
+      }
+
+      &__nickname {
+        font: normal 15px/17px Poppins, sans-serif;
+        color: #8899A6;
+        margin: 0;
+      }
+    }
+
+    &__speciality {
+      font: normal 15px/17px Poppins, sans-serif;
+    }
+
+    &__location {
+      display: flex;
+      gap: 5px;
+
+      &__town {
+        @extend .user__info__name__nickname;
+      }
+    }
+  }
+
+  &__about {
+
+    &__showMore {
+      border: none;
+      color: var(--primaryBlue);
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+}

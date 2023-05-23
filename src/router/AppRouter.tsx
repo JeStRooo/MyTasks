@@ -16,7 +16,7 @@ const AppRouter = () => {
       <SearchProvider>
         <Routes>
           <Route path={'/main-page'} element={<MainPage/>}/>
-          <Route path={'/home-page'} element={<HomePage/>}/>
+          <Route path={'/home-page/:id'} element={<HomePage/>}/>
           <Route path={'/login-page'} element={<RegistrationPage/>}/>
           <Route path={'/auth'} element={<AuthPage/>}/>
         </Routes>

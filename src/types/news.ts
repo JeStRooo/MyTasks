@@ -17,6 +17,12 @@ export type News = {
   urlToImage: string;
 }
 
+export interface NewsStateType {
+  news: {
+    news: News[]
+  }
+}
+
 export type SideBarType = {
   news: News[],
 }

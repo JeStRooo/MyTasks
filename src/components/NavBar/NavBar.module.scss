@@ -2,7 +2,8 @@
   margin-top: 8px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
+  min-width: 220px;
 
   &__logo {
     width: 70%;

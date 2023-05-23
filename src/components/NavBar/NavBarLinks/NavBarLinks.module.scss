@@ -3,6 +3,7 @@
 .navBarLinks {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
 
   &__link {
     display: flex;
@@ -21,6 +22,7 @@
       font: 500 17px/19px Poppins, sans-serif;
       text-decoration: none;
       transition: .3s all;
+      margin: 0;
     }
 
     &:hover &__img {

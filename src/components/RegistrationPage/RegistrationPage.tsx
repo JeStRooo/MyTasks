@@ -34,7 +34,6 @@ const RegistrationPage: React.FC = () => {
     }
     dispatch(registrationAction(userData))
     navigate('/main-page')
-    console.log(userData)
   }
 
   return (

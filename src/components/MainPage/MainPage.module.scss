@@ -1,26 +1,20 @@
 @import "./src/assets/colors/colors";
 
 .background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  min-height: 70rem;
 }
 .wrapper {
   margin: 0 2rem;
   display: flex;
   justify-content: space-between;
 }
-.header {
-  min-width: 220px;
-}
 .main {
   display: flex;
   flex-direction: column;
   border: 1.5px solid var(--darkWhite);
   border-top: none;
-  max-width: 550px;
+  max-width: 600px;
+  height: max-content;
 
   &__header {
     display: flex;
