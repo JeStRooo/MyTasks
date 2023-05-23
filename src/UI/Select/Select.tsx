@@ -6,7 +6,7 @@ import classes from "./Select.module.scss";
 
 import drop_down_arrow from "../../assets/images/drop-down-arrow.svg";
 
-const Select = () => {
+const Select: React.FC<HTMLSelectElement> = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedOption, setSelectedOption] = useState('')
 

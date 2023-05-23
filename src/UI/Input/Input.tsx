@@ -1,13 +1,8 @@
-import React from 'react';
+import React, {InputHTMLAttributes} from 'react';
 
 import classes from "./Input.module.scss";
 
-const Input = (props: any) => {
-  return (
-    <>
-      <input className={classes.myInput} {...props} />
-    </>
-  );
-};
+const Input: React.FC<InputHTMLAttributes<HTMLInputElement>> = (inputProps) =>
+      <input className={classes.myInput} {...inputProps} />
 
 export default Input;

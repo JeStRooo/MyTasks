@@ -4,14 +4,11 @@ import {buttonType} from "../../types/buttonType";
 
 import classes from "./Button.module.scss"
 
-const Button = ({children, ...props}: buttonType) => {
-  return (
-    <>
-      <button {...props} className={classes.myButton}>
+const Button: React.FC<buttonType> = (
+  {type, children, onClick, disabled}
+) =>
+      <button type={type} onClick={onClick} className={classes.myButton} disabled={disabled}>
         {children}
       </button>
-    </>
-  );
-};
 
 export default Button;
