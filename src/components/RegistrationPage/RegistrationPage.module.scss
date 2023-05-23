@@ -1,0 +1,54 @@
+@import "./src/assets/colors/colors";
+
+.main {
+  padding: 1rem;
+
+  &__logo {
+    display: flex;
+    max-width: 15%;
+    justify-content: flex-start;
+  }
+
+  &__registration {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 550px;
+    height: 550px;
+    padding: 1.3rem 1rem .6rem 1rem;
+
+    &__title {
+      margin: 0;
+      font-size: 1.9rem;
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    &__checkbox {
+      display: flex;
+      justify-content: flex-start;
+      max-width: 500px;
+
+      p {
+        font: 15px/17px Poppins, sans-serif;
+      }
+    }
+  }
+}
+.auth {
+
+  &__signup {
+    text-decoration: none;
+    margin-left: 5px;
+    color: var(--lightBlue);
+    font: normal 17px/19px Poppins, sans-serif;
+  }
+}

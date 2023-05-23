@@ -1,0 +1,117 @@
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding: 10px 15px;
+  border-bottom: 1.5px solid var(--darkWhite);
+
+  &__user {
+    display: flex;
+    gap: .5rem;
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      &__main {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        &__userInfo {
+          display: flex;
+          gap: .5rem;
+
+          &__userName {
+            font: bold 15px/17px Poppins, sans-serif;
+            margin: 0;
+          }
+
+          &__nickName {
+            font: normal 13px/16px Poppins, sans-serif;
+            color: #8899A6;
+            margin: 0;
+          }
+        }
+
+        &__title {
+          font: normal 15px/17px Poppins, sans-serif;
+          margin: 0;
+        }
+      }
+
+      &__actions {
+        display: flex;
+        gap: 2rem;
+
+        &__reactions {
+          color: #8899A6;
+          display: flex;
+          align-items: center;
+
+          &__img {
+            padding: 7px;
+            cursor: pointer;
+            filter: grayscale(1);
+            transition: .3s all;
+
+            &:hover {
+              filter: grayscale(0);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__avatar {
+    max-width: 45px;
+    max-height: 45px;
+    border-radius: 360px;
+  }
+
+  &__comments {
+    display: flex;
+    flex-direction: column;
+    transition: .3s all;
+
+    &__comment {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      padding: 10px 10px;
+      border-top: 1.5px solid var(--darkWhite);
+
+      &__user {
+        @extend .post__user;
+
+        &__info {
+          @extend .post__user__info;
+
+          &__main {
+            @extend .post__user__info__main__userInfo;
+
+            &__userName {
+              @extend .post__user__info__main__userInfo__userName;
+            }
+
+            &__nickName {
+              @extend .post__user__info__main__userInfo__nickName;
+            }
+          }
+
+          &__title {
+            font: normal 13px/15px Poppins, sans-serif;
+            margin: 0;
+          }
+        }
+
+        &__avatar {
+          max-width: 35px;
+          border-radius: 360px;
+        }
+      }
+    }
+  }
+}

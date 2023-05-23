@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import classes from "./Modal.module.scss";
 
-import error from "../../assets/error.gif";
+import error from "../../assets/images/error.gif";
 
 const Modal = () => {
   const [isModal, setIsModal] = useState(true)

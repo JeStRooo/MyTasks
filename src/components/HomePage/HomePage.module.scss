@@ -1,0 +1,56 @@
+@import "./src/assets/colors/colors";
+
+.background {
+  min-height: 70rem;
+}
+.wrapper {
+  margin: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid var(--darkWhite);
+  border-spacing: 0;
+  border-top: none;
+  max-width: 600px;
+  min-width: 600px;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1.5px solid var(--darkWhite);
+
+    &__page {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .7rem;
+      border-bottom: 1.5px solid var(--darkWhite);
+
+      &__title {
+        font: bold 18px/19px Poppins, sans-serif;
+        margin: 0;
+      }
+    }
+  }
+
+  &__myActions {
+
+    &__nav {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+
+      li {
+        list-style-type: none;
+        font: bold 18px/20px Poppins, sans-serif;
+      }
+    }
+
+    &__posts {
+
+    }
+  }
+}
