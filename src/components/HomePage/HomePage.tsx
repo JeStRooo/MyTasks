@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 import isEqual from "lodash/isEqual";
 
+import scrollToTop from "../../helpers/scrollToTop/scrollToTop";
 import UserPosts from "./UserPosts/UserPosts";
 import NewsList from "../MainPage/SideBar/NewsList/NewsList";
 import NavBar from "../NavBar/NavBar";
@@ -37,6 +38,8 @@ const HomePage = () => {
   const {theme, themeHandler, themeStyle} = useContext(ThemeContext);
 
   const userURL = useParams();
+
+  console.log(comments)
 
   useEffect(() => {
     dispatch(getNewsRequest())
@@ -93,4 +96,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default scrollToTop(HomePage);

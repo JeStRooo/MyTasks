@@ -1,5 +1,9 @@
 @import "./src/assets/colors/colors";
 
+body {
+  scroll-behavior: smooth;
+}
+
 .background {
   min-height: 70rem;
 }
